@@ -13,16 +13,21 @@ const notificationSchema = new mongoose.Schema({
   sender: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    default: null
   },
   task: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Task',
-    required: true
+    default: null
+  },
+  project: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Project',
+    default: null
   },
   type: {
     type: String,
-    enum: ['REOPEN_REQUEST', 'COMMENT', 'INFO'],   // 👈 AJOUTÉ 'COMMENT'
+    enum: ['REOPEN_REQUEST', 'COMMENT', 'INFO', 'DEADLINE_ALERT'],
     default: 'INFO'
   },
   message: {

@@ -98,26 +98,14 @@ router.post('/register', async (req, res) => {
         validateSMTP:       false, // SMTP souvent bloqué en localhost
       })
 
-      if (!emailValidation.valid) {
-        let reason = "L'adresse e-mail est invalide ou n'existe pas."
-        const { validators } = emailValidation
-        if (validators.regex && !validators.regex.valid) {
-          reason = "Le format de l'adresse e-mail est incorrect."
-        } else if (validators.typo && !validators.typo.valid) {
-          reason = `Faute de frappe détectée. Vouliez-vous dire : ${validators.typo.customSuggestion} ?`
-        } else if (validators.disposable && !validators.disposable.valid) {
-          reason = "Les adresses e-mail temporaires ou jetables ne sont pas autorisées."
-        } else if (validators.mx && !validators.mx.valid) {
-          reason = "Le domaine de l'adresse e-mail ne possède pas de serveurs de messagerie (MX) valides."
-        }
-        await logActivity(req, 'REGISTER_FAILED', { email: trimmedEmail, reason })
-        return res.status(400).json({ message: reason })
-      }
+      // 🔍 LOG DEBUG — à retirer une fois le problème identifié
+      console.log('📧 Résultat validation email:', JSON.stringify(emailValidation, null, 2))
+ 
     } catch (validationErr) {
+      console.warn('⚠️ Échec validation e-mail (exception réseau):', validationErr.message)
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
         return res.status(400).json({ message: "Le format de l'adresse e-mail est invalide." })
       }
-      console.warn('Échec validation e-mail (réseau):', validationErr.message)
     }
 
     const existing = await User.findOne({ email: trimmedEmail })
@@ -234,13 +222,7 @@ router.get('/check-email', async (req, res) => {
       validateSMTP:       false,
     })
 
-    if (!result.valid) {
-      const { validators } = result
-      let reason = 'Email invalide'
-      if (validators.disposable && !validators.disposable.valid) reason = 'Email temporaire non autorisé'
-      else if (validators.mx && !validators.mx.valid) reason = 'Domaine sans serveur mail'
-      return res.json({ valid: false, reason })
-    }
+   
 
     res.json({ valid: true, exists: false })
   } catch {

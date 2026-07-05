@@ -8,10 +8,12 @@ import authRoutes from './routes/auth.js'
 import taskRoutes from './routes/tasks.js'
 import userRoutes from './routes/users.js'
 import logRoutes  from './routes/logs.js'
+import aiRoutes from './routes/ai.js'
 import projectRoutes from './routes/projects.js'
 import uploadRoutes from './routes/upload.js'
 import notificationRoutes from './routes/notifications.js'
 import { seedAdmin } from './seed.js'
+import { startDeadlineChecker } from './services/deadlineChecker.js'
 
 // S'assurer que le dossier uploads existe
 const uploadsDir = './uploads'
@@ -36,6 +38,7 @@ app.use('/api/auth',  authRoutes)
 app.use('/api/tasks', taskRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/logs',  logRoutes)
+app.use('/api/ai', aiRoutes)
 app.use('/api/projects', projectRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/notifications', notificationRoutes)
@@ -50,6 +53,9 @@ mongoose.connect(process.env.MONGO_URI)
 
     // Initialisation automatique de l'admin au premier démarrage
     await seedAdmin()
+
+    // Démarrer le vérificateur de deadlines de projets
+    startDeadlineChecker()
 
     app.listen(process.env.PORT || 3000, () => {
       console.log(` Serveur démarré sur http://localhost:${process.env.PORT || 3000}`)

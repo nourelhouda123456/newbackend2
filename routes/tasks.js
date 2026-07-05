@@ -285,9 +285,10 @@ router.post('/:id/comments', async (req, res) => {
     // Doit avoir accès à la tâche pour commenter
     const isAdmin    = req.user.role === 'admin'
     const isAssignee = task.assignee && task.assignee.toString() === req.user._id.toString()
+    const isOwner    = task.owner    && task.owner.toString()    === req.user._id.toString()
     const isPublic   = task.visibility === 'public'
 
-    if (!isAdmin && !isAssignee && !isPublic) {
+    if (!isAdmin && !isAssignee && !isOwner && !isPublic) {
       return res.status(403).json({ message: 'Non autorisé.' })
     }
 
@@ -309,6 +310,43 @@ router.post('/:id/comments', async (req, res) => {
     await task.populate('statusHistory.changedBy', 'name email')
 
     await logActivity(req, 'COMMENT_ADDED', { taskId: task._id, title: task.title })
+
+    // ── Notifications : notifier tous les participants sauf l'auteur ──────
+    const authorId  = req.user._id.toString()
+    const taskName  = task.title
+
+    // Collecter tous les participants uniques de la tâche (owner + assignee + tous les auteurs de commentaires)
+    const participantIds = new Set()
+
+    // Owner (après populate c'est un objet)
+    const ownerId = task.owner?._id?.toString() || task.owner?.toString()
+    if (ownerId) participantIds.add(ownerId)
+
+    // Assignee
+    const assigneeId = task.assignee?._id?.toString() || task.assignee?.toString()
+    if (assigneeId) participantIds.add(assigneeId)
+
+    // Tous les auteurs de commentaires précédents
+    for (const comment of task.comments) {
+      const cAuthorId = comment.author?._id?.toString() || comment.author?.toString()
+      if (cAuthorId) participantIds.add(cAuthorId)
+    }
+
+    // Supprimer l'auteur du commentaire actuel — il ne doit PAS se notifier lui-même
+    participantIds.delete(authorId)
+
+    // Créer UNE seule notification par participant
+    const notifPromises = [...participantIds].map(recipientId =>
+      Notification.create({
+        recipient: recipientId,
+        sender:    req.user._id,
+        task:      task._id,
+        type:      'COMMENT',
+        message:   `💬 ${req.user.name} a répondu dans la tâche "${taskName}".`,
+      })
+    )
+
+    await Promise.all(notifPromises)
 
     res.status(201).json({ task })
   } catch (err) {

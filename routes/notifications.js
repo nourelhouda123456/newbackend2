@@ -10,20 +10,27 @@ const router = express.Router()
 router.use(protect)
 
 // GET /api/notifications
-// Admin: toutes les notifications forAdmin qui ne sont pas lues
-// User: (non utilisé pour le moment, mais on pourrait retourner ses propres notifications)
+// Admin: toutes les notifications forAdmin non lues
+// User: ses propres notifications (recipient = lui) non lues
 router.get('/', async (req, res) => {
   try {
     let query = {}
     if (req.user.role === 'admin') {
-      query = { forAdmin: true, isRead: false }
+      // Admin voit ses notifs personnelles ET les notifs forAdmin
+      query = {
+        $or: [
+          { forAdmin: true, isRead: false },
+          { recipient: req.user._id, isRead: false },
+        ]
+      }
     } else {
-      query = { sender: req.user._id, isRead: false } // par ex. si on veut lui notifier que sa demande est acceptée
+      query = { recipient: req.user._id, isRead: false }
     }
 
     const notifications = await Notification.find(query)
       .populate('sender', 'name email')
       .populate('task', 'title status priority')
+      .populate('project', 'name deadline')
       .sort({ createdAt: -1 })
 
     res.json({ notifications })

@@ -1,0 +1,553 @@
+[
+  {
+    "id": "1783285747189h2pl4zc",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4836eed918285ebabb1049",
+      "title": "conception et développement du fronton"
+    },
+    "createdAt": "2026-07-05T21:09:07.189Z"
+  },
+  {
+    "id": "1783285750117kxei767",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:09:10.117Z"
+  },
+  {
+    "id": "1783285753301i9t6fap",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:09:13.301Z"
+  },
+  {
+    "id": "1783285772779bao3p09",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:09:32.779Z"
+  },
+  {
+    "id": "17832857808789ftq1p9",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:09:40.878Z"
+  },
+  {
+    "id": "1783285789661wvrxjyt",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:09:49.661Z"
+  },
+  {
+    "id": "1783285806441o44skqm",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:10:06.441Z"
+  },
+  {
+    "id": "1783285816559k1hodsx",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "PROJECT_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "projectId": "6a482931d918285ebabb0f39",
+      "name": "gestion des projets"
+    },
+    "createdAt": "2026-07-05T21:10:16.559Z"
+  },
+  {
+    "id": "1783285818845qo4k5vt",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:10:18.845Z"
+  },
+  {
+    "id": "1783285825307pfr1a9q",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:10:25.307Z"
+  },
+  {
+    "id": "1783285845169u8ipw6v",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_CREATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh",
+      "project": "gestion des projets",
+      "assignee": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:10:45.169Z"
+  },
+  {
+    "id": "1783285853652a5lfu2z",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:10:53.652Z"
+  },
+  {
+    "id": "1783285857419s7rynox",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh",
+      "previousStatus": "todo",
+      "newStatus": "in_progress",
+      "changedBy": "Nour Elhouda Ben Abdallah",
+      "reopenedByAdmin": false
+    },
+    "createdAt": "2026-07-05T21:10:57.419Z"
+  },
+  {
+    "id": "1783285857448dmw9byc",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh",
+      "fields": [
+        "status"
+      ],
+      "changedBy": "Nour Elhouda Ben Abdallah"
+    },
+    "createdAt": "2026-07-05T21:10:57.448Z"
+  },
+  {
+    "id": "178328586175295jsw7v",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh",
+      "previousStatus": "in_progress",
+      "newStatus": "blocked",
+      "changedBy": "Nour Elhouda Ben Abdallah",
+      "reopenedByAdmin": false
+    },
+    "createdAt": "2026-07-05T21:11:01.752Z"
+  },
+  {
+    "id": "1783285861771fukl31n",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh",
+      "fields": [
+        "status"
+      ],
+      "changedBy": "Nour Elhouda Ben Abdallah"
+    },
+    "createdAt": "2026-07-05T21:11:01.771Z"
+  },
+  {
+    "id": "17832858696755qh8mw4",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:11:09.675Z"
+  },
+  {
+    "id": "17832858713887skjszg",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:11:11.388Z"
+  },
+  {
+    "id": "1783285905049h2imc5h",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:11:45.049Z"
+  },
+  {
+    "id": "1783285907466o00ij6k",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:11:47.466Z"
+  },
+  {
+    "id": "17832859153019k9ur48",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:11:55.301Z"
+  },
+  {
+    "id": "1783286325844yrey0f4",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:18:45.844Z"
+  },
+  {
+    "id": "1783286328892ml454w6",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:18:48.892Z"
+  },
+  {
+    "id": "1783286330961h0huxu3",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:18:50.961Z"
+  },
+  {
+    "id": "1783286398506dkoogx4",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:19:58.506Z"
+  },
+  {
+    "id": "1783286405292o9bjar3",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:20:05.292Z"
+  },
+  {
+    "id": "17832864130608hn5r6v",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:20:13.060Z"
+  },
+  {
+    "id": "17832868300550o4qzd4",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:27:10.055Z"
+  },
+  {
+    "id": "17832868324403mph9lj",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:27:12.440Z"
+  },
+  {
+    "id": "1783286834322leo00c7",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:27:14.322Z"
+  },
+  {
+    "id": "1783287631965frou4ky",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:40:31.965Z"
+  },
+  {
+    "id": "178328763426639w42l6",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:40:34.266Z"
+  },
+  {
+    "id": "1783287641238k8bme3z",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:40:41.238Z"
+  },
+  {
+    "id": "17832876599279otgg6w",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:40:59.927Z"
+  },
+  {
+    "id": "17832876630917pt29z7",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:41:03.091Z"
+  },
+  {
+    "id": "1783287667046tlgw5h0",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:41:07.046Z"
+  },
+  {
+    "id": "1783287707840oqc3osa",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:41:47.840Z"
+  },
+  {
+    "id": "17832877105052nmz30v",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:41:50.505Z"
+  },
+  {
+    "id": "1783287717050qg4tyng",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:41:57.050Z"
+  },
+  {
+    "id": "17832878848282fvyf19",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:44:44.828Z"
+  },
+  {
+    "id": "17832878873908a59ize",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-05T21:44:47.390Z"
+  },
+  {
+    "id": "1783287889249mzuwt6z",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-05T21:44:49.249Z"
+  },
+  {
+    "id": "17832880598421pe622a",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4ac85592e5911e6ecdc034",
+      "title": "hhhhhhhhhhh"
+    },
+    "createdAt": "2026-07-05T21:47:39.842Z"
+  },
+  {
+    "id": "17832880617335bo7vqo",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-05T21:47:41.733Z"
+  },
+  {
+    "id": "17832880708311o2v1oe",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-05T21:47:50.831Z"
+  }
+]
