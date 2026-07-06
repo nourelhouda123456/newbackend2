@@ -78,7 +78,7 @@ export async function checkDeadlines() {
  * À appeler une fois au démarrage du serveur.
  */
 export function startDeadlineChecker() {
-  console.log('⏰ Vérificateur de deadlines démarré (toutes les heures)')
+  console.log(' Vérificateur de deadlines démarré (toutes les heures)')
   // Vérification immédiate au démarrage du serveur
   checkDeadlines()
   // Puis toutes les heures

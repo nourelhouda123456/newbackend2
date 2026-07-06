@@ -59,16 +59,16 @@ Si tu ne peux pas déduire l'action, renvoie {"action": "error", "message": "Rai
 Structure JSON attendue (choisis UNE seule action parmi):
 
 1. {"action": "create_task", "payload": {"title": "...", "description": "...", "project": "ID du projet (obligatoire)", "priority": "low|medium|high", "status": "todo|in_progress|blocked|done", "assignee": "ID (optionnel)", "visibility": "public|private"}}
-2. {"action": "update_task", "payload": {"taskId": "ID", "title": "...", "status": "..."}}
-3. {"action": "delete_task", "payload": {"taskId": "ID"}}
-4. {"action": "create_project", "payload": {"name": "...", "description": "..."}} (Seulement si admin)
+2. {"action": "update_task", "payload": {"title": "...", "description": "...", "project": "ID du projet (obligatoire)", "priority": "low|medium|high", "status": "todo|in_progress|blocked|done", "assignee": "ID (optionnel)", "visibility": "public|private"}}
+3. {"action": "delete_task", "payload": {"taskId": "ID","title": "..."}}
+4. {"action": "create_project", "payload": {"name": "...", "deadline": "YYYY-MM-DD", "description": "..."}} (Seulement si admin)
 5. {"action": "update_project", "payload": {"projectId": "ID", "name": "...", "description": "...", "deadline": "YYYY-MM-DD"}} (Seulement si admin)
-6. {"action": "delete_project", "payload": {"projectId": "ID"}} (Seulement si admin)
+6. {"action": "delete_project", "payload": {"projectId": "ID","name": "..."}} (Seulement si admin)
 7. {"action": "create_user", "payload": {"name": "...", "email": "...", "password": "...", "role": "user|admin"}} (Seulement si admin)
 8. {"action": "update_user", "payload": {"userId": "ID", "role": "user|admin", "active": true|false}} (Seulement si admin)
-9. {"action": "delete_user", "payload": {"userId": "ID"}} (Seulement si admin)
-10. {"action": "add_collaborator", "payload": {"projectId": "ID", "userId": "ID"}} (Admin ou owner du projet)
-11. {"action": "remove_collaborator", "payload": {"projectId": "ID", "userId": "ID"}} (Admin ou owner du projet)
+9. {"action": "delete_user", "payload": {"userId": "ID","name": "...",}} (Seulement si admin)
+10. {"action": "add_collaborator", "payload": {"projectId": "ID", "userId": "ID", "name": "ID"}} (Admin ou owner du projet)
+11. {"action": "remove_collaborator", "payload": {"projectId": "ID", "userId": "ID", "name": "ID"}} (Admin ou owner du projet)
 
 Associe les noms mentionnés dans la requête avec les IDs fournis dans le contexte.
 `

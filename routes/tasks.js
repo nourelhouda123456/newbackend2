@@ -173,7 +173,7 @@ router.put('/:id', async (req, res) => {
     // Mise à jour des autres champs
     if (title       !== undefined) task.title       = title.trim()
     if (description !== undefined) task.description = description.trim()
-    if (priority    !== undefined && isAdmin) task.priority = priority
+    if (priority    !== undefined) task.priority = priority
     if (documents   !== undefined) task.documents   = documents
     if (isAdmin) {
       if (visibility !== undefined) task.visibility = visibility
@@ -256,7 +256,7 @@ router.post('/:id/request-reopen', async (req, res) => {
 
     await task.save()
 
-    // Créer la notification pour les administrateurs
+    // Créer la notification pour assigneeles administrateurs
     await Notification.create({
       forAdmin: true,
       sender: req.user._id,
