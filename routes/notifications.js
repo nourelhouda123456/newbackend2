@@ -108,7 +108,62 @@ router.put('/:id/approve', adminOnly, async (req, res) => {
     notif.isRead = true
     await notif.save()
 
+    // Notifier le demandeur que sa demande est approuvée
+    if (notif.sender) {
+      await Notification.create({
+        recipient: notif.sender,
+        sender: req.user._id,
+        task: task._id,
+        project: task.project,
+        type: 'APPROVE',
+        message: `L'administrateur a approuvé votre demande de réouverture pour la tâche "${task.title}".`
+      })
+    }
+
     res.json({ message: 'Demande approuvée avec succès.', task })
+  } catch (err) {
+    res.status(500).json({ message: 'Erreur serveur.', error: err.message })
+  }
+})
+
+// PUT /api/notifications/:id/ignore
+// Ignorer la demande de réouverture
+router.put('/:id/ignore', adminOnly, async (req, res) => {
+  try {
+    const notif = await Notification.findById(req.params.id)
+    if (!notif) return res.status(404).json({ message: 'Notification introuvable.' })
+
+    if (notif.type !== 'REOPEN_REQUEST') {
+      return res.status(400).json({ message: 'Cette notification n\'est pas une demande de réouverture.' })
+    }
+
+    const task = await Task.findById(notif.task)
+    if (!task) return res.status(404).json({ message: 'Tâche associée introuvable.' })
+
+    // Ajouter un commentaire automatique (optionnel)
+    task.comments.push({
+      author: req.user._id,
+      content: 'Demande de réouverture ignorée.'
+    })
+    await task.save()
+
+    // Notifier le demandeur que sa demande est ignorée
+    if (notif.sender) {
+      await Notification.create({
+        recipient: notif.sender,
+        sender: req.user._id,
+        task: task._id,
+        project: task.project,
+        type: 'IGNORE',
+        message: `L'administrateur a ignoré votre demande de réouverture pour la tâche "${task.title}".`
+      })
+    }
+
+    // Marquer la notif comme lue
+    notif.isRead = true
+    await notif.save()
+
+    res.json({ message: 'Demande ignorée avec succès.', task })
   } catch (err) {
     res.status(500).json({ message: 'Erreur serveur.', error: err.message })
   }

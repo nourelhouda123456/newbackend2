@@ -4,6 +4,7 @@ import { GoogleGenAI, Type } from '@google/genai'
 import Task from '../models/task.js'
 import Project from '../models/project.js'
 import User from '../models/user.js'
+import Notification from '../models/notification.js'
 import { logActivity } from '../middleware/logger.js'
 
 const router = express.Router()
@@ -54,12 +55,16 @@ Tu es un agent intelligent qui traduit une requête en langage naturel en une ac
 Analyse la requête suivante: "${prompt}"
 
 Tu dois renvoyer STRICTEMENT un objet JSON valide correspondant à l'action.
+La valeur de "action" DOIT ÊTRE EXACTEMENT l'une des chaînes de caractères en anglais listées ci-dessous (ex: "add_comment", "create_task"). Ne la traduis pas.
 Si tu ne peux pas déduire l'action, renvoie {"action": "error", "message": "Raison"}.
 
-Structure JSON attendue (choisis UNE seule action parmi):
+Correspondance des statuts : "bloqué" ou "bloquer" = "blocked", "en cours" = "in_progress", "terminé" = "done", "à faire" = "todo".
+Si l'utilisateur dit "bloquer la tâche X", l'action est "update_task" avec le status "blocked".
+
+Structure JSON attendue (choisis UNE seule action parmi la liste suivante, et utilise EXACTEMENT le nom de l'action en anglais):
 
 1. {"action": "create_task", "payload": {"title": "...", "description": "...", "project": "ID du projet (obligatoire)", "priority": "low|medium|high", "status": "todo|in_progress|blocked|done", "assignee": "ID (optionnel)", "visibility": "public|private"}}
-2. {"action": "update_task", "payload": {"title": "...", "description": "...", "project": "ID du projet (obligatoire)", "priority": "low|medium|high", "status": "todo|in_progress|blocked|done", "assignee": "ID (optionnel)", "visibility": "public|private"}}
+2. {"action": "update_task", "payload": {"taskId": "ID (obligatoire)", "title": "...", "description": "...", "priority": "low|medium|high", "status": "todo|in_progress|blocked|done", "assignee": "ID (optionnel)", "visibility": "public|private"}}
 3. {"action": "delete_task", "payload": {"taskId": "ID","title": "..."}}
 4. {"action": "create_project", "payload": {"name": "...", "deadline": "YYYY-MM-DD", "description": "..."}} (Seulement si admin)
 5. {"action": "update_project", "payload": {"projectId": "ID", "name": "...", "description": "...", "deadline": "YYYY-MM-DD"}} (Seulement si admin)
@@ -69,6 +74,9 @@ Structure JSON attendue (choisis UNE seule action parmi):
 9. {"action": "delete_user", "payload": {"userId": "ID","name": "...",}} (Seulement si admin)
 10. {"action": "add_collaborator", "payload": {"projectId": "ID", "userId": "ID", "name": "ID"}} (Admin ou owner du projet)
 11. {"action": "remove_collaborator", "payload": {"projectId": "ID", "userId": "ID", "name": "ID"}} (Admin ou owner du projet)
+12. {"action": "add_comment", "payload": {"taskId": "ID", "content": "..."}} (Pour envoyer un commentaire ou répondre à un commentaire)
+13. {"action": "approve_request", "payload": {"taskId": "ID"}} (Pour approuver une demande de réouverture, admin uniquement)
+14. {"action": "ignore_request", "payload": {"taskId": "ID"}} (Pour ignorer/rejeter une demande de réouverture, admin uniquement)
 
 Associe les noms mentionnés dans la requête avec les IDs fournis dans le contexte.
 `
@@ -218,6 +226,64 @@ Associe les noms mentionnés dans la requête avec les IDs fournis dans le conte
        await project.save()
        
        return res.json({ message: "Collaborateur retiré avec succès", data: project, action: "remove_collaborator" })
+    }
+
+    if (parsed.action === 'add_comment') {
+       const task = await Task.findById(parsed.payload.taskId)
+       if (!task) return res.status(404).json({ message: 'Tâche introuvable.' })
+       
+       task.comments.push({
+         author: req.user._id,
+         content: parsed.payload.content
+       })
+       await task.save()
+       
+       return res.json({ message: "Commentaire ajouté avec succès", data: task, action: "add_comment" })
+    }
+
+    if (parsed.action === 'approve_request' || parsed.action === 'ignore_request') {
+       if (!isAdmin) return res.status(403).json({ message: 'Seul un admin peut gérer les demandes de réouverture.' })
+       
+       const notif = await Notification.findOne({ task: parsed.payload.taskId, type: 'REOPEN_REQUEST', isRead: false })
+       if (!notif) return res.status(404).json({ message: 'Aucune demande de réouverture en attente pour cette tâche.' })
+       
+       const task = await Task.findById(notif.task)
+       if (!task) return res.status(404).json({ message: 'Tâche introuvable.' })
+       
+       if (parsed.action === 'approve_request') {
+           const previousStatus = task.status
+           const newStatus = 'in_progress'
+           
+           task.statusHistory.push({
+             previousStatus, newStatus, changedBy: req.user._id, changedAt: new Date(), note: 'Réouverture approuvée par l\'administrateur via IA'
+           })
+           task.status = newStatus
+           task.comments.push({ author: req.user._id, content: 'Demande de réouverture acceptée via assistant IA.' })
+           await task.save()
+           
+           if (notif.sender) {
+             await Notification.create({
+               recipient: notif.sender, sender: req.user._id, task: task._id, project: task.project, type: 'APPROVE',
+               message: `L'administrateur a approuvé votre demande de réouverture pour la tâche "${task.title}".`
+             })
+           }
+           notif.isRead = true
+           await notif.save()
+           return res.json({ message: "Demande approuvée avec succès", data: task, action: "approve_request" })
+       } else {
+           task.comments.push({ author: req.user._id, content: 'Demande de réouverture ignorée via assistant IA.' })
+           await task.save()
+           
+           if (notif.sender) {
+             await Notification.create({
+               recipient: notif.sender, sender: req.user._id, task: task._id, project: task.project, type: 'IGNORE',
+               message: `L'administrateur a ignoré votre demande de réouverture pour la tâche "${task.title}".`
+             })
+           }
+           notif.isRead = true
+           await notif.save()
+           return res.json({ message: "Demande ignorée avec succès", data: task, action: "ignore_request" })
+       }
     }
 
     return res.status(400).json({ message: "Action non supportée", action: parsed.action })

@@ -27,7 +27,7 @@ const notificationSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ['REOPEN_REQUEST', 'COMMENT', 'INFO', 'DEADLINE_ALERT'],
+    enum: ['REOPEN_REQUEST', 'COMMENT', 'INFO', 'DEADLINE_ALERT', 'APPROVE', 'IGNORE'],
     default: 'INFO'
   },
   message: {
