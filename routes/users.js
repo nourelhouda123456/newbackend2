@@ -141,4 +141,21 @@ router.delete('/:id', adminOnly, async (req, res) => {
   }
 })
 
+// POST /api/users/fcm-token - Save the FCM token for the current user
+router.post('/fcm-token', async (req, res) => {
+  try {
+    const { token } = req.body
+    if (!token) {
+      return res.status(400).json({ message: 'Token FCM requis.' })
+    }
+
+    req.user.fcmToken = token
+    await req.user.save()
+
+    res.json({ message: 'Token FCM enregistré avec succès.' })
+  } catch (err) {
+    res.status(500).json({ message: 'Erreur serveur.', error: err.message })
+  }
+})
+
 export default router

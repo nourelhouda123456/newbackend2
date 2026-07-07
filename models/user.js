@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
+  fcmToken: {
+    type: String,
+    default: null,
+  },
 }, { timestamps: true })
 
 // Hash du mot de passe avant sauvegarde (seulement si un mot de passe existe)

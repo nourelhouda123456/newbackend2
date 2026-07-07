@@ -4618,5 +4618,303 @@
       "name": "test"
     },
     "createdAt": "2026-07-07T13:01:50.821Z"
+  },
+  {
+    "id": "1783447259905hq1lbot",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-07T18:00:59.905Z"
+  },
+  {
+    "id": "1783452079039yl4xzan",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4be066a37c0dd5a3decefc",
+      "title": "conception"
+    },
+    "createdAt": "2026-07-07T19:21:19.039Z"
+  },
+  {
+    "id": "1783452085288tlqphtn",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-07T19:21:25.288Z"
+  },
+  {
+    "id": "1783452092551yf79qpq",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-07T19:21:32.551Z"
+  },
+  {
+    "id": "1783453272778vx46ulb",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "COMMENT_ADDED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4be066a37c0dd5a3decefc",
+      "title": "conception"
+    },
+    "createdAt": "2026-07-07T19:41:12.778Z"
+  },
+  {
+    "id": "1783453276516nz4o7i3",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-07T19:41:16.516Z"
+  },
+  {
+    "id": "17834532787065mywd0n",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-07T19:41:18.706Z"
+  },
+  {
+    "id": "1783453300097yxwp0k2",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-07T19:41:40.097Z"
+  },
+  {
+    "id": "17834533065527ox7d5u",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-07T19:41:46.552Z"
+  },
+  {
+    "id": "17834533271112ejrhht",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com"
+    },
+    "createdAt": "2026-07-07T19:42:07.111Z"
+  },
+  {
+    "id": "17834533286803bhdae0",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-07T19:42:08.680Z"
+  },
+  {
+    "id": "1783453333202nu72l4j",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4be066a37c0dd5a3decefc",
+      "title": "conception",
+      "previousStatus": "done",
+      "newStatus": "in_progress",
+      "changedBy": "administrateur",
+      "reopenedByAdmin": true
+    },
+    "createdAt": "2026-07-07T19:42:13.202Z"
+  },
+  {
+    "id": "1783453336674xel2bg9",
+    "userId": "6a481667f77a5418511cc8be",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-07T19:42:16.674Z"
+  },
+  {
+    "id": "1783453343555jimkt7u",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "email": "nourbenabdallah17@gmail.com",
+      "role": "user",
+      "method": "google"
+    },
+    "createdAt": "2026-07-07T19:42:23.555Z"
+  },
+  {
+    "id": "1783453717947vlxnh4s",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4d57f4f794ba65a6497d52",
+      "title": "conception",
+      "previousStatus": "todo",
+      "newStatus": "in_progress",
+      "changedBy": "Nour Elhouda Ben Abdallah",
+      "reopenedByAdmin": false
+    },
+    "createdAt": "2026-07-07T19:48:37.947Z"
+  },
+  {
+    "id": "1783453717991x1emi6m",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4d57f4f794ba65a6497d52",
+      "title": "conception",
+      "fields": [
+        "status"
+      ],
+      "changedBy": "Nour Elhouda Ben Abdallah"
+    },
+    "createdAt": "2026-07-07T19:48:37.991Z"
+  },
+  {
+    "id": "1783454233775itda54x",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4d57f4f794ba65a6497d52",
+      "title": "conception",
+      "previousStatus": "in_progress",
+      "newStatus": "blocked",
+      "changedBy": "Nour Elhouda Ben Abdallah",
+      "reopenedByAdmin": false
+    },
+    "createdAt": "2026-07-07T19:57:13.775Z"
+  },
+  {
+    "id": "1783454233964h4jiibe",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4d57f4f794ba65a6497d52",
+      "title": "conception",
+      "fields": [
+        "status"
+      ],
+      "changedBy": "Nour Elhouda Ben Abdallah"
+    },
+    "createdAt": "2026-07-07T19:57:13.964Z"
+  },
+  {
+    "id": "1783454334397hj031yp",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4d57f4f794ba65a6497d52",
+      "title": "conception",
+      "previousStatus": "blocked",
+      "newStatus": "done",
+      "changedBy": "Nour Elhouda Ben Abdallah",
+      "reopenedByAdmin": false
+    },
+    "createdAt": "2026-07-07T19:58:54.397Z"
+  },
+  {
+    "id": "1783454334451tpwd2hi",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4d57f4f794ba65a6497d52",
+      "title": "conception",
+      "fields": [
+        "status"
+      ],
+      "changedBy": "Nour Elhouda Ben Abdallah"
+    },
+    "createdAt": "2026-07-07T19:58:54.451Z"
+  },
+  {
+    "id": "17834543489586pmba6g",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_STATUS_CHANGED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4beaa7312d5fedfdfc9e4b",
+      "title": "dev",
+      "previousStatus": "in_progress",
+      "newStatus": "blocked",
+      "changedBy": "Nour Elhouda Ben Abdallah",
+      "reopenedByAdmin": false
+    },
+    "createdAt": "2026-07-07T19:59:08.958Z"
+  },
+  {
+    "id": "1783454348992oiwf845",
+    "userId": "6a4a6f60078d7b27da24572f",
+    "action": "TASK_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "details": {
+      "taskId": "6a4beaa7312d5fedfdfc9e4b",
+      "title": "dev",
+      "fields": [
+        "status"
+      ],
+      "changedBy": "Nour Elhouda Ben Abdallah"
+    },
+    "createdAt": "2026-07-07T19:59:08.992Z"
   }
 ]

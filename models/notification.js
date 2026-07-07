@@ -60,4 +60,30 @@ notificationSchema.set('toObject', {
   }
 })
 
+// Trigger Firebase Cloud Messaging after saving a new notification
+import { sendPushNotification } from '../firebase.js';
+
+// We use post('save') but we check if doc.createdAt === doc.updatedAt (or close enough) to know it's a new document
+notificationSchema.post('save', async function(doc) {
+  try {
+    const isNew = doc.createdAt.getTime() === doc.updatedAt.getTime();
+    if (!isNew) return; // Only send push notification on creation
+
+    await doc.populate('recipient', 'name fcmToken');
+    if (doc.recipient && doc.recipient.fcmToken) {
+      await sendPushNotification(
+        doc.recipient.fcmToken,
+        'Nouvelle Notification TaskFlow',
+        doc.message,
+        {
+          notificationId: doc._id.toString(),
+          type: doc.type,
+        }
+      );
+    }
+  } catch (error) {
+    console.error('Error in notification post-save hook:', error);
+  }
+});
+
 export default mongoose.model('Notification', notificationSchema)
