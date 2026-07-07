@@ -4583,5 +4583,40 @@
       "role": "admin"
     },
     "createdAt": "2026-07-07T10:42:12.401Z"
+  },
+  {
+    "id": "1783426916297jbcvdm8",
+    "userId": "6a43e04a536ef074bc53c892",
+    "action": "LOGOUT",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com"
+    },
+    "createdAt": "2026-07-07T12:21:56.297Z"
+  },
+  {
+    "id": "1783426918304wl1s1rn",
+    "userId": "6a43e04a536ef074bc53c892",
+    "action": "LOGIN_SUCCESS",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "details": {
+      "email": "admin@taskflow.com",
+      "role": "admin"
+    },
+    "createdAt": "2026-07-07T12:21:58.304Z"
+  },
+  {
+    "id": "17834293108211zbeqiq",
+    "userId": "6a43e04a536ef074bc53c892",
+    "action": "PROJECT_UPDATED",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "details": {
+      "projectId": "6a43d364873c98875e88f4cd",
+      "name": "test"
+    },
+    "createdAt": "2026-07-07T13:01:50.821Z"
   }
 ]

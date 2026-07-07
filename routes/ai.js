@@ -1,6 +1,6 @@
- import express from 'express'
+import express from 'express'
 import { protect } from '../middleware/auth.js'
-import { GoogleGenAI, Type } from '@google/genai'
+import Groq from 'groq-sdk'
 import Task from '../models/task.js'
 import Project from '../models/project.js'
 import User from '../models/user.js'
@@ -8,6 +8,8 @@ import Notification from '../models/notification.js'
 import { logActivity } from '../middleware/logger.js'
 
 const router = express.Router()
+
+const GROQ_MODEL = 'llama-3.3-70b-versatile'
 
 // ═══════════════════════════════════════════════════════════════════════
 // Fonction réutilisable : génère le résumé IA d'un projet
@@ -120,15 +122,15 @@ Instructions:
 ${writingInstructions}
 `
 
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
-  const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
-    contents: dataStr,
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
+  const completion = await groq.chat.completions.create({
+    model: GROQ_MODEL,
+    messages: [{ role: 'user', content: dataStr }],
   })
 
   return {
     projectName: project.name,
-    summary: response.text,
+    summary: completion.choices[0].message.content,
     stats: {
       total,
       byStatus,
@@ -151,13 +153,13 @@ router.post('/execute', protect, async (req, res) => {
       return res.status(400).json({ message: 'Le prompt est obligatoire.' })
     }
 
-    if (!process.env.GEMINI_API_KEY) {
-       return res.status(500).json({ message: 'Clé API Gemini manquante côté serveur.' })
+    if (!process.env.GROQ_API_KEY) {
+       return res.status(500).json({ message: 'Clé API Groq manquante côté serveur.' })
     }
 
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
+    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
 
-    // Fetch context to help Gemini map names to IDs
+    // Fetch context to help l'IA mapper les noms aux IDs
     let projects = []
     if (req.user.role === 'admin') {
       projects = await Project.find({}).select('_id name')
@@ -217,15 +219,13 @@ Structure JSON attendue (choisis UNE seule action parmi la liste suivante, et ut
 Associe les noms mentionnés dans la requête avec les IDs fournis dans le contexte.
 `
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: contextStr,
-      config: {
-        responseMimeType: "application/json"
-      }
+    const completion = await groq.chat.completions.create({
+      model: GROQ_MODEL,
+      messages: [{ role: 'user', content: contextStr }],
+      response_format: { type: 'json_object' },
     })
 
-    const resultText = response.text
+    const resultText = completion.choices[0].message.content
     let parsed
     try {
       parsed = JSON.parse(resultText)
@@ -459,8 +459,8 @@ Associe les noms mentionnés dans la requête avec les IDs fournis dans le conte
 // ═══════════════════════════════════════════════════════════════════════
 router.get('/project-summary/:projectId', protect, async (req, res) => {
   try {
-    if (!process.env.GEMINI_API_KEY) {
-      return res.status(500).json({ message: 'Clé API Gemini manquante côté serveur.' })
+    if (!process.env.GROQ_API_KEY) {
+      return res.status(500).json({ message: 'Clé API Groq manquante côté serveur.' })
     }
     const result = await buildProjectSummary(req.params.projectId, req.user, { forSpeech: false })
     res.json(result)
