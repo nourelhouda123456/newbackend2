@@ -5,7 +5,7 @@ const notificationSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  recipient: {                          // 👈 AJOUTÉ — pour cibler un user précis (ex: l'assigné)
+  recipient: {                          
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     default: null
